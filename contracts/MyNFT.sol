@@ -10,6 +10,8 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 contract MyNFT is ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
+    mapping(address => mapping (address => uint256)) allowed;
+
 
     constructor() ERC721("MyNFT", "NFT") {}
 
